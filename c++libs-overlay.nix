@@ -22,6 +22,12 @@ rec {
     inherit stdenv;
   };
 
+  Catch2 = super.callPackage ./pkgs/Catch2 {
+    version = "v2.2.1";
+    sha256 = "1r0w39m1f42p00zcz58ab59ywdw42by0cmnjasy71rcddy4vqf1r";
+    inherit stdenv;
+  };
+
   platform = super.callPackage ./pkgs/platform {
     version = "v0.1.0";
     sha256 = "0081iscys1gvd0k35jsz8b4x5m1cfa6584bn8mwwcr5p7yxz80m5";
