@@ -5,8 +5,8 @@ rec {
   boost = super.boost.override { inherit stdenv; };
 
   MPark_Variant = super.callPackage ./pkgs/MPark.Variant {
-    version = "v1.2.2";
-    sha256 = "1gdz76pdfg60xsp7q3sh2l252ni5x6arcz3f7jn2jxr2ndpq8cdr";
+    version = "v1.3.0";
+    sha256 = "1ij3k6p5cfm887vcy163a4v34sxnp1v7w0d8jybq7k4gh4gy9xyh";
     inherit stdenv;
   };
 
