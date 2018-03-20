@@ -1,6 +1,8 @@
 {stdenv}: self: super:
 rec {
-  cpp_boost = super.boost.override { inherit stdenv; };
+  inherit stdenv;
+
+  boost = super.boost.override { inherit stdenv; };
 
   MPark_Variant = super.callPackage ./pkgs/MPark.Variant {
     version = "v1.2.2";

@@ -1,6 +1,6 @@
 { stdenv, fetchurl, fetchFromGitHub
 , version ? null, rev ? null, sha256
-, cmake, cpp_boost
+, cmake, boost
 }:
 
 let
@@ -26,7 +26,7 @@ stdenv.mkDerivation rec {
 
   inherit src;
 
-  propagatedBuildInputs = [ cpp_boost ];
+  propagatedBuildInputs = [ boost ];
   nativeBuildInputs = [ cmake ];
 
   meta = with stdenv.lib; {
