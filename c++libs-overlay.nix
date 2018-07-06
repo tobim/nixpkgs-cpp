@@ -3,6 +3,7 @@ rec {
   inherit stdenv;
 
   boost = super.boost.override { inherit stdenv; };
+  caf = super.caf.override { inherit stdenv; };
 
   MPark_Variant = super.callPackage ./pkgs/MPark.Variant {
     version = "v1.3.0";
