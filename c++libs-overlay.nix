@@ -3,7 +3,15 @@ rec {
   inherit stdenv;
 
   boost = super.boost.override { inherit stdenv; };
-  caf = super.caf.override { inherit stdenv; };
+
+  caf = (super.caf.override { inherit stdenv; }).overrideAttrs (oldAttrs: rec {
+    buildInputs = [ super.opencl-headers ];
+  });
+  caf-with-logging = caf.overrideAttrs (oldAttrs: rec {
+    cmakeFlags = [
+      "-DCAF_LOG_LEVEL=3"
+    ];
+  });
 
   MPark_Variant = super.callPackage ./pkgs/MPark.Variant {
     version = "v1.3.0";
