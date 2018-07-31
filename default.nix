@@ -8,6 +8,7 @@ let
   gcc5Stdenv = super.overrideCC super.stdenv super.gcc5;
   gcc6Stdenv = super.overrideCC super.stdenv super.gcc6;
   gcc7Stdenv = super.overrideCC super.stdenv super.gcc7;
+  gcc8Stdenv = super.overrideCC super.stdenv super.gcc8;
 
   clang35Stdenv = super.llvmPackages_35.stdenv;
   clang37Stdenv = super.llvmPackages_37.stdenv;
