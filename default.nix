@@ -35,6 +35,7 @@ in
   gcc5pkgs = import ./c++libs-overlay.nix { stdenv = gcc5Stdenv; } self super;
   gcc6pkgs = import ./c++libs-overlay.nix { stdenv = gcc6Stdenv; } self super;
   gcc7pkgs = import ./c++libs-overlay.nix { stdenv = gcc7Stdenv; } self super;
+  gcc8pkgs = import ./c++libs-overlay.nix { stdenv = gcc8Stdenv; } self super;
 
   clang35pkgs = import ./c++libs-overlay.nix { stdenv = clang35Stdenv; } self super;
   clang37pkgs = import ./c++libs-overlay.nix { stdenv = clang37Stdenv; } self super;
