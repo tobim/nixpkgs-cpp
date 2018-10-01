@@ -7,8 +7,8 @@ let
   gcc49Stdenv = super.overrideCC super.stdenv super.gcc49;
   gcc5Stdenv = super.overrideCC super.stdenv super.gcc5;
   gcc6Stdenv = super.overrideCC super.stdenv super.gcc6;
-  gcc7Stdenv = super.overrideCC super.stdenv super.gcc7;
-  gcc8Stdenv = super.overrideCC super.stdenv super.gcc8;
+  gcc7Stdenv = super.overrideCC super.gccStdenv super.gcc7;
+  gcc8Stdenv = super.overrideCC super.gccStdenv super.gcc8;
 
   clang35Stdenv = super.llvmPackages_35.stdenv;
   clang37Stdenv = super.llvmPackages_37.stdenv;
@@ -17,6 +17,7 @@ let
   clang4Stdenv = super.llvmPackages_4.stdenv;
   clang5Stdenv = super.llvmPackages_5.stdenv;
   clang6Stdenv = super.llvmPackages_6.stdenv;
+  clang7Stdenv = super.llvmPackages_7.stdenv;
 
   clang35libcxxStdenv = super.llvmPackages_35.libcxxStdenv;
   clang37libcxxStdenv = super.llvmPackages_37.libcxxStdenv;
@@ -25,6 +26,7 @@ let
   clang4libcxxStdenv = super.llvmPackages_4.libcxxStdenv;
   clang5libcxxStdenv = super.llvmPackages_5.libcxxStdenv;
   clang6libcxxStdenv = super.llvmPackages_6.libcxxStdenv;
+  clang7libcxxStdenv = super.llvmPackages_7.libcxxStdenv;
 
 in
 {
@@ -44,6 +46,7 @@ in
   clang4pkgs = import ./c++libs-overlay.nix { stdenv = clang4Stdenv; } self super;
   clang5pkgs = import ./c++libs-overlay.nix { stdenv = clang5Stdenv; } self super;
   clang6pkgs = import ./c++libs-overlay.nix { stdenv = clang6Stdenv; } self super;
+  clang7pkgs = import ./c++libs-overlay.nix { stdenv = clang7Stdenv; } self super;
 
   clang35libcxxpkgs = import ./c++libs-overlay.nix { stdenv = clang35libcxxStdenv; } self super;
   clang37libcxxpkgs = import ./c++libs-overlay.nix { stdenv = clang37libcxxStdenv; } self super;
@@ -52,6 +55,7 @@ in
   clang4libcxxpkgs = import ./c++libs-overlay.nix { stdenv = clang4libcxxStdenv; } self super;
   clang5libcxxpkgs = import ./c++libs-overlay.nix { stdenv = clang5libcxxStdenv; } self super;
   clang6libcxxpkgs = import ./c++libs-overlay.nix { stdenv = clang6libcxxStdenv; } self super;
+  clang7libcxxpkgs = import ./c++libs-overlay.nix { stdenv = clang7libcxxStdenv; } self super;
 }
 
 

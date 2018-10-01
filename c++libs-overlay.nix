@@ -10,6 +10,7 @@ rec {
   caf-with-logging = caf.overrideAttrs (oldAttrs: rec {
     cmakeFlags = [
       "-DCAF_LOG_LEVEL=3"
+      "-DCAF_NO_OPENCL=yes"
     ];
   });
 
