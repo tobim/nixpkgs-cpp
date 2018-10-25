@@ -43,4 +43,16 @@ rec {
     sha256 = "0081iscys1gvd0k35jsz8b4x5m1cfa6584bn8mwwcr5p7yxz80m5";
     inherit stdenv;
   };
+
+  gbenchmark = (super.gbenchmark.override { inherit stdenv; }).overrideAttrs (oldAttrs: rec {
+    name = "gbenchmark-${version}";
+    version = "1.4.1";
+    src = super.fetchFromGitHub {
+      owner = "google";
+      repo = "benchmark";
+      rev = "v${version}";
+      sha256 = "0l1f6azka85fkb8kdmh4qmmpxhsv7lr7wvll6sld31mfz0cai1kd";
+    };
+    buildInputs = oldAttrs.buildInputs ++ [ super.gtest ];
+  });
 }
