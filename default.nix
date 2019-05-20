@@ -18,6 +18,7 @@ let
   clang5Stdenv = super.llvmPackages_5.stdenv;
   clang6Stdenv = super.llvmPackages_6.stdenv;
   clang7Stdenv = super.llvmPackages_7.stdenv;
+  clang8Stdenv = super.llvmPackages_8.stdenv;
 
   clang35libcxxStdenv = super.llvmPackages_35.libcxxStdenv;
   clang37libcxxStdenv = super.llvmPackages_37.libcxxStdenv;
@@ -27,6 +28,7 @@ let
   clang5libcxxStdenv = super.llvmPackages_5.libcxxStdenv;
   clang6libcxxStdenv = super.llvmPackages_6.libcxxStdenv;
   clang7libcxxStdenv = super.llvmPackages_7.libcxxStdenv;
+  clang8libcxxStdenv = super.llvmPackages_8.libcxxStdenv;
 
 in
 {
@@ -47,6 +49,7 @@ in
   clang5pkgs = import ./c++libs-overlay.nix { stdenv = clang5Stdenv; } self super;
   clang6pkgs = import ./c++libs-overlay.nix { stdenv = clang6Stdenv; } self super;
   clang7pkgs = import ./c++libs-overlay.nix { stdenv = clang7Stdenv; } self super;
+  clang8pkgs = import ./c++libs-overlay.nix { stdenv = clang8Stdenv; } self super;
 
   clang35libcxxpkgs = import ./c++libs-overlay.nix { stdenv = clang35libcxxStdenv; } self super;
   clang37libcxxpkgs = import ./c++libs-overlay.nix { stdenv = clang37libcxxStdenv; } self super;
@@ -56,6 +59,7 @@ in
   clang5libcxxpkgs = import ./c++libs-overlay.nix { stdenv = clang5libcxxStdenv; } self super;
   clang6libcxxpkgs = import ./c++libs-overlay.nix { stdenv = clang6libcxxStdenv; } self super;
   clang7libcxxpkgs = import ./c++libs-overlay.nix { stdenv = clang7libcxxStdenv; } self super;
+  clang8libcxxpkgs = import ./c++libs-overlay.nix { stdenv = clang8libcxxStdenv; } self super;
 }
 
 
